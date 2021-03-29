@@ -15,13 +15,14 @@
     has_many :recipes, through: :meals
     has_many :reviews
 
-2. class Meal
+2. class Meal 
     belongs_to :user
-    has_many :recipes
+    has_many :meal_recipes
+    has_many :recipes, through: :meal_recipes
 
-3.  class MealRecipe
-     belongs_to :meal
-     belongs_to :recipe
+3. class MealRecipe
+    belongs_to :meal
+    belongs_to :recipe
     
 4. class Recipe 
     has_many :meal_recipes
@@ -68,26 +69,28 @@
     last_name
     user_name
     password
-    age
 
 2. Meal
     user_id
-    recipe_id
     name (Dinner, Lunch, Breakfast, Snack)
     date
 
-3. Recipe
+3. MealRecipe
+    meal_id
+    recipe_id
+
+4. Recipe
     name
 
-4. RecipeIngredient
+5. RecipeIngredient
     recipe_id
     ingredient_id
     amount or quantity 
 
-5. Ingredient
+6. Ingredient
     name
 
-6. Review
+7. Review
     user_id
     recipe_id
     rating
