@@ -9,12 +9,16 @@ class RecipesController < ApplicationController
 
     def new
         @recipe = Recipe.new
+        @recipe_ingredient = RecipeIngredient.new
     end
 
     def create
+        # byebug
         @recipe = Recipe.create(recipe_params(:id, :name))
+        flash[:recipe] = @recipe
+        flash[:number] = params[:number]
         if @recipe.valid?
-            redirect_to recipe_path(@recipe)
+            redirect_to new_recipe_ingredient_path
         else
             flash[:errors] = @recipe.errors.full_messages
             redirect_to new_recipe_path
