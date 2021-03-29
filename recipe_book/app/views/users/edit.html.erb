@@ -1,0 +1,22 @@
+<h1>Edit an existing user</h1>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <li style="color:red"><%= error %></li>
+    <% end %>
+    <br>
+<% end %>
+<%= form_for @user do |f| %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+<br>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+<br>
+<%= f.label :user_name %>
+<%= f.text_field :user_name %>
+<br>
+<%= f.label :password %>
+<%= f.text_field :password %>
+<br>
+<%= f.submit %>
+<% end %>
