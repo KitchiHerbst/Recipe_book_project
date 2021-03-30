@@ -1,0 +1,17 @@
+<%= form_with model: @recipe do |f| %>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    <h3>Ingredients</h3>
+    <%= f.fields_for :recipe_ingredients do |ing| %>
+      <p>
+        <%= ing.label :name %>
+        <%= ing.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+        <%= ing.label :quantity %>
+        <%= ing.number_field :quantity %>
+      </p>
+    <% end %>
+
+      <%= f.submit 'Add Ingredient', :name => "add_ingredient" %>
+      <%= f.submit %>
+
+  <% end %>

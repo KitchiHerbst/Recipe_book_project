@@ -1,0 +1,4 @@
+<%= f.fields_for :recipe_ingredients do |recipe_ingredients_fields| %>
+    <%= recipe_ingredients_fields.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+    <%= recipe_ingredients_fields.number_field :quantity %>
+<% end %>

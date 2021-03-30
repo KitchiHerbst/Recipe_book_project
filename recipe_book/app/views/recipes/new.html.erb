@@ -1,11 +1,21 @@
 <h1> Create a new Recipe </h1>
 
-<%= form_for @recipe do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.submit %>
-<% end %>
 
+<%= form_for @recipe do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br><br>
+<br>
+    <% 5.times do %>
+    <%= f.fields_for :recipe_ingredients, @recipe.recipe_ingredients.build do |r| %>
+        <%= r.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+        <%= r.number_field :quantity %> 
+    <% end %><br>
+    <% end %>
+<br>
+<%= f.submit %>
+
+
+<% end %>
 
 
 
