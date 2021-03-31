@@ -1,22 +1,27 @@
-<h1>Create a new user</h1>
+<h1>Create a new account</h1>
+<hr>
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-        <li style="color:red"><%= error %></li>
+        <p style="color:red"><%= error %></p>
     <% end %>
     <br>
 <% end %>
+<br>
 <%= form_for @user do |f| %>
 <%= f.label :first_name %>
 <%= f.text_field :first_name %>
-<br>
+<br><br>
 <%= f.label :last_name %>
 <%= f.text_field :last_name %>
-<br>
+<br><br>
 <%= f.label :user_name %>
 <%= f.text_field :user_name %>
-<br>
+<br><br>
 <%= f.label :password %>
 <%= f.password_field :password %>
-<br>
+<br><br>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+<br><br>
 <%= f.submit %>
 <% end %>
