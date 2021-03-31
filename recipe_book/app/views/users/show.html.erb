@@ -2,5 +2,6 @@
 <li>First Name: <%= @user.first_name %></li>
 <li>Last Name: <%= @user.last_name %></li>
 
-
+<%= button_to "Create recipe", new_recipe_path, method: :get %>
+<%= button_to "Add meal", new_meal_path, method: :get %>
 <%= button_to "logout", "/logout", method: :delete %>

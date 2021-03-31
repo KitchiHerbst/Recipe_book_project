@@ -14,6 +14,9 @@ Recipe.destroy_all
 i1 = Ingredient.create(name: "tomato")
 i2 = Ingredient.create(name: "sugar")
 i3 = Ingredient.create(name: "cinnamon")
+i4 = Ingredient.create(name: "brown sugar")
+i5 = Ingredient.create(name: "garlic salt")
+i6 = Ingredient.create(name: "lemon juice")
 
 r1 = Recipe.create(name: "Grandma's Special Sweet-Maters")
 

@@ -12,9 +12,8 @@ class RecipesController < ApplicationController
         # 5.times {@recipe.recipe_ingredients.build}
     end
 
-    def create
-        byebug
-        @recipe = Recipe.new(recipe_params(:id, :name))
+    def create 
+        @recipe = Recipe.create(recipe_params)
         if @recipe.valid?
             redirect_to @recipe
         else
@@ -24,9 +23,11 @@ class RecipesController < ApplicationController
     end
 
     private
-    def recipe_params(*args)
-        params.require(:recipe).permit(*args)
-    end
-
+    # def recipe_params(*args)
+    #     params.require(:recipe).permit(*args)
+    # end
     
+    def recipe_params
+        params.require(:recipe).permit!
+    end
 end

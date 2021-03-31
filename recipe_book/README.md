@@ -45,15 +45,15 @@
 
 
 #### <!-- MVP -->
-1. User can create an account and edit it later
-2. User can create a recipe 
+<!-- 1. User can create an account and edit it later -->
+<!-- 2. User can create a recipe  -->
 <!-- 3. User account is only accessible to that user -->
 <!-- 4. User can add unique ingredients if they arent in the database already  -->
 5. User can add a meal 
-6. User can see all recipes
+<!-- 6. User can see all recipes -->
 7. User can see all recipes with a specific ingredient
 8. User can see all meals
-9. User can see all ingredients in a recipe
+<!-- 9. User can see all ingredients in a recipe -->
 
 
 ##### <!-- Stretch Goals -->

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :not_logged_in, only: [:show, :edit]
 
     def show
-        # @user = User.find_by(id: session[:id])
+        @user = User.find_by(id: session[:id])
     end
 
     def new
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
 
     def edit
-        # @user = User.find_by(id: params[:id])
+        @user = User.find_by(id: session[:id])
     end
 
     def update
