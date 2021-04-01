@@ -1,0 +1,7 @@
+<h1> Your Meals</h1>
+
+<% @meals.each do |meal| %>
+<li><%= link_to meal.name, meal %> <%= meal.date %> </li>
+<% end %>
+
+<%= button_to "Home", @user, method: :get %>

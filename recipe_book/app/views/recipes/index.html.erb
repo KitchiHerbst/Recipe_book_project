@@ -1,4 +1,14 @@
 <h1>All Recipes:</h1>
+<br>
+<br>
+<%= button_to "Home", @user, method: :get %> 
+<br>
+<br>
+<%= button_to "Add a new ingredient", new_ingredient_path, method: :get %> 
+
+<hr>
+
 <li><% @recipes.each do |recipe| %>
 <li> <%= link_to recipe.name, recipe %> </li>
 <% end %></li>
+

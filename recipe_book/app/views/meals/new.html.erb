@@ -1,0 +1,18 @@
+<h1> Add a meal </h1>
+
+<%= form_for @meal do |f| %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br><br>
+    <%= f.label :date %>
+	<%= f.text_field :date %><br><br>
+    <% 5.times do %>
+    <%= f.fields_for :meal_recipes, @meal.meal_recipes.build do |r| %>
+        <%= r.collection_select :recipe_id, Recipe.all, :id, :name %><br>
+    <% end %><br>
+    <% end %>
+<br>
+<%= f.submit %>
+<% end %>
+
+<%= button_to "Home", @user, method: :get %>
