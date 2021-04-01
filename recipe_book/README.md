@@ -95,3 +95,4 @@
     recipe_id
     rating
     description
+<%= button_to "Delete meal", url: '/meals/destroy', method: :delete %><br>

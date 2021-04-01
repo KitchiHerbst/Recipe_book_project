@@ -7,6 +7,5 @@
     <li> <%=recipe.name%> </li>
 <% end %>
 
-<%= button_to "Delete meal", url: '/meals/destroy', method: :delete %><br>
-
+<%= button_to "Delete meal", @meal, method: :delete %><br>
 </body>
