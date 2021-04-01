@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
     before_action :current_user, only: [:index, :show, :edit, :new]
     before_action :not_logged_in, only: [:show, :edit, :index, :new]
-    
+
     def index
         @user = User.find_by(id: session[:id])
         @recipes = Recipe.all
@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
     end
 
     def new
+
         @user = User.find_by(id: session[:id])
         @recipe = Recipe.new
         # 5.times {@recipe.recipe_ingredients.build}
@@ -28,8 +29,11 @@ class RecipesController < ApplicationController
         end
     end
 
+    def edit
+        @user = User.find_by(id: session[:id])
+    end
+
     private
-    
     def recipe_params
         params.require(:recipe).permit!
     end

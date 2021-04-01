@@ -1,2 +1,6 @@
 <h1> <%= @ingredient.name %> </h1>
 <%= button_to "Add a new ingredient", new_ingredient_path, method: :get %>
+
+<% @ingredient.recipes.each do |recipe| %>
+<li><%= link_to recipe.name, recipe %></li>
+<% end %>
