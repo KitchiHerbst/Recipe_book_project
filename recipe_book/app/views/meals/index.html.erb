@@ -1,0 +1,4 @@
+<h1>All Meals:</h1>
+<li><% @meals.each do |meal| %>
+<li> <%= link_to meal.name, meal %> </li>
+<% end %></li>
