@@ -8,4 +8,5 @@ class User < ApplicationRecord
     validates :first_name, :last_name, :user_name, presence: true
     validates :user_name, uniqueness: true
     validates :password, length: {minimum: 6}
+
 end

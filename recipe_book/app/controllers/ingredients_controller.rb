@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
     before_action :current_user, only: [:index, :show, :edit, :new]
     before_action :not_logged_in, only: [:show, :edit, :index, :new]
+    
     def index
         @user = User.find_by(id: session[:id])
         @ingredients = Ingredient.all

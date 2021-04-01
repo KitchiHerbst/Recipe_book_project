@@ -16,15 +16,15 @@ class RecipesController < ApplicationController
 
         @user = User.find_by(id: session[:id])
         @recipe = Recipe.new
-        # 5.times {@recipe.recipe_ingredients.build}
     end
 
     def create 
+        # byebug
         @recipe = Recipe.create(recipe_params)
         if @recipe.valid?
             redirect_to @recipe
         else
-            flash[:errors] = @recipe.errors.full_messages
+            flash[:errors] = @recipe.errors.full_messages 
             redirect_to new_recipe_path
         end
     end

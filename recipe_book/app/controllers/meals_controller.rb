@@ -10,6 +10,7 @@ class MealsController < ApplicationController
     def show
         @meal = Meal.find_by(id: params[:id])
         @recipes = @meal.recipes
+        # byebug
     end
 
     def new
@@ -18,6 +19,7 @@ class MealsController < ApplicationController
     end 
 
     def create
+        # byebug
         @meal = Meal.create(meal_params)
         redirect_to meals_path
     end
@@ -32,8 +34,14 @@ class MealsController < ApplicationController
         redirect_to meals_path
     end
 
+    def destroy
+        @meal = Meal.find_by(id: params[:id]) 
+        @meal.destroy 
+        redirect_to meals_path 
+    end
+
     private
     def meal_params
-        params.require(:meal).permit(:name, :date, :user_id) 
+        params.require(:meal).permit!
     end
 end
