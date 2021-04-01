@@ -1,7 +1,11 @@
 <h1>User: <%= @user.user_name %></h1>
 <li>First Name: <%= @user.first_name %></li>
 <li>Last Name: <%= @user.last_name %></li>
+<br><br>
+<%= button_to "Create recipe", new_recipe_path, method: :get %> <br><br>
+<%= button_to "Add meal", new_meal_path, method: :get %><br><br>
+<%= button_to "View meals", meals_path, method: :get %><br><br>
+<%= button_to "Add a new ingredient", new_ingredient_path, method: :get %>
+<%= button_to "logout", "/logout", method: :delete %><br><br>
 
-<%= button_to "Create recipe", new_recipe_path, method: :get %>
-<%= button_to "Add meal", new_meal_path, method: :get %>
-<%= button_to "logout", "/logout", method: :delete %>
+

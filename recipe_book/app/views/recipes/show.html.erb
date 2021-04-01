@@ -2,3 +2,5 @@
 <% @recipe.recipe_ingredients.each do |r_ingredient| %>
 <li>Ingredient: <%= r_ingredient.ingredient.name %> Quantity: <%= r_ingredient.quantity %></li>
 <% end %>
+
+<%= button_to "Home", @user, method: :get %>
