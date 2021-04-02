@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :meals
+    has_many :meals, dependent: :destroy
     has_many :recipes, through: :meals
     #has_many :reviews
 

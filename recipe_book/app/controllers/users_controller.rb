@@ -40,6 +40,11 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        User.destroy(session[:id])
+        redirect_to '/login'
+    end
+
     private
 
     def user_params
